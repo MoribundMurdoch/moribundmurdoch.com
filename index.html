@@ -32,7 +32,6 @@
   <meta name="twitter:description" content="Words, essays, experiments, MorDictionary, Wandering Wikis, and other open-ended internet projects." />
   <meta name="twitter:image"       content="https://www.moribundmurdoch.com/images/og-image.jpg" />
 
-  <!-- Fonts — preconnect must be paired with the actual stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=YOUR+FONT+HERE&display=swap" />
@@ -45,205 +44,309 @@
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/sections.css" />
+
+  <style>
+    /* Layout: sidebar + content side by side */
+    body {
+      display: flex;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Wrapper that holds header, main, footer */
+    #page-wrap {
+      flex: 1;
+      min-width: 0; /* prevents flex blowout */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hide sidebar on small screens, show hamburger instead */
+    @media (max-width: 768px) {
+      nav-sidebar {
+        display: none;
+      }
+      nav-sidebar.mobile-open {
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        top: 0; left: 0;
+        height: 100vh;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <mor-header></mor-header>
+  <!-- ── Sidebar ── -->
+  <nav-sidebar
+    id="main-sidebar"
+    brand="MoribundMurdoch"
+    brand-icon="M"
+    theme="dark"
+    width="260px"
+  ></nav-sidebar>
 
-  <main>
+  <!-- ── Everything else ── -->
+  <div id="page-wrap">
 
-    <!-- Hero / Identity -->
-   <!-- Hero / Identity -->
-<section class="hero">
+    <mor-header></mor-header>
 
-  <div class="hero-body">
+    <main>
 
-    <div class="hero-main">
-      <p class="hero-eyebrow">
-        Murdoch Doing Stuff in the Spirit of 
-        <a href="https://mordictionary.org/wiki/Finitude_fighting">Finitude Fighting</a>
-      </p>
+      <!-- Hero / Identity -->
+      <section class="hero">
+        <div class="hero-body">
+          <div class="hero-main">
 
-      <h1>Moribund<br><span class="muted">Murdoch</span></h1>
+            <p class="hero-eyebrow">
+              Murdoch Doing Stuff in the Spirit of
+              <a href="https://mordictionary.org/wiki/Finitude_fighting">Finitude Fighting</a>
+            </p>
 
-      <p class="hero-tagline">
-        A hub for all things associated with a Murdoch aware of his moribundity who's also a the recovering fubarist, also a lexicographer, likesM1911s, cast iron pans, adobe buildings, kotatsus, web components, bacteriophages, steak, Linux, raw milk, raw veggies, farming, dancing.
-      </p>
+            <h1>Moribund<br><span class="muted">Murdoch</span></h1>
 
-      <div class="hero-actions">
-        <a href="/Lexicosphere.php" class="btn-primary">Explore the Lexicosphere</a>
-        <a href="/projects.php" class="btn-ghost">Browse projects</a>
-      </div>
-    </div>
+            <p class="hero-tagline">
+              A hub for all things associated with a Murdoch aware of his moribundity who's also
+              a recovering fubarist, also a lexicographer, likes M1911s, cast iron pans, adobe
+              buildings, kotatsus, web components, bacteriophages, steak, Linux, raw milk, raw
+              veggies, farming, dancing.
+            </p>
 
-  </div>
+            <div class="hero-actions">
+              <a href="/Lexicosphere.php" class="btn-primary">Explore the Lexicosphere</a>
+              <a href="/projects.php"     class="btn-ghost">Browse projects</a>
+            </div>
 
-</section>
+          </div>
+        </div>
+      </section>
 
-    <!-- Core Navigation Grid -->
-    <section class="section section-nav-grid">
-      <div class="section-header">
-        <h2 class="section-title">Explore</h2>
-      </div>
+      <!-- Core Navigation Grid -->
+      <section class="section section-nav-grid">
+        <div class="section-header">
+          <h2 class="section-title">Explore</h2>
+        </div>
 
-      <card-grid>
+        <card-grid>
 
-        <link-card href="/projects.php">
-          <h3>Projects</h3>
-          <p>A constellation of experiments in language, aesthetics, and digital construction.</p>
-          <tag-list>
-            <tag-pill>Index</tag-pill>
-            <tag-pill>Overview</tag-pill>
-          </tag-list>
-        </link-card>
+          <link-card href="/projects.php">
+            <h3>Projects</h3>
+            <p>A constellation of experiments in language, aesthetics, and digital construction.</p>
+            <tag-list>
+              <tag-pill>Index</tag-pill>
+              <tag-pill>Overview</tag-pill>
+            </tag-list>
+          </link-card>
 
-        <link-card href="/wiki/">
-          <h3>Wiki</h3>
-          <p>The structured archive. Definitions, entries, fragments, and attempts at order.</p>
-          <tag-list>
-            <tag-pill>MediaWiki</tag-pill>
-            <tag-pill>Archive</tag-pill>
-          </tag-list>
-        </link-card>
+          <link-card href="/wiki/">
+            <h3>Wiki</h3>
+            <p>The structured archive. Definitions, entries, fragments, and attempts at order.</p>
+            <tag-list>
+              <tag-pill>MediaWiki</tag-pill>
+              <tag-pill>Archive</tag-pill>
+            </tag-list>
+          </link-card>
 
-        <link-card href="/Murdoverse.php">
-          <h3>Murdoverse</h3>
-          <p>A broader conceptual layer tying together identities, projects, and thematic threads.</p>
-          <tag-list>
-            <tag-pill>Meta</tag-pill>
-            <tag-pill>Framework</tag-pill>
-          </tag-list>
-        </link-card>
+          <link-card href="/Murdoverse.php">
+            <h3>Murdoverse</h3>
+            <p>A broader conceptual layer tying together identities, projects, and thematic threads.</p>
+            <tag-list>
+              <tag-pill>Meta</tag-pill>
+              <tag-pill>Framework</tag-pill>
+            </tag-list>
+          </link-card>
 
-        <link-card href="/Lexicosphere.php">
-          <h3>Lexicosphere</h3>
-          <p>A space for word systems, neologisms, and lexical experimentation.</p>
-          <tag-list>
-            <tag-pill>Language</tag-pill>
-            <tag-pill>Neologisms</tag-pill>
-          </tag-list>
-        </link-card>
-        
-   <link-card href="/Deweyverse.php">
-          <h3>Deweyverse</h3>
-          <p>A space for word systems, neologisms, and lexical experimentation.</p>
-          <tag-list>
-            <tag-pill>Classification</tag-pill>
-            <tag-pill>Dewey Decimal System</tag-pill>
-          </tag-list>
-        </link-card>
-      </card-grid>
-    </section>
+          <link-card href="/Lexicosphere.php">
+            <h3>Lexicosphere</h3>
+            <p>A space for word systems, neologisms, and lexical experimentation.</p>
+            <tag-list>
+              <tag-pill>Language</tag-pill>
+              <tag-pill>Neologisms</tag-pill>
+            </tag-list>
+          </link-card>
 
-    <!-- Featured Projects -->
-    <section class="section section-featured">
-      <div class="section-header">
-        <h2 class="section-title">Featured Work</h2>
-      </div>
+          <link-card href="/Deweyverse.php">
+            <h3>Deweyverse</h3>
+            <p>A classification system rooted in the Dewey Decimal framework, reinterpreted.</p>
+            <tag-list>
+              <tag-pill>Classification</tag-pill>
+              <tag-pill>Dewey Decimal System</tag-pill>
+            </tag-list>
+          </link-card>
 
-      <card-grid>
+        </card-grid>
+      </section>
 
-        <link-card href="/mordictionary/">
-          <h3>MorDictionary</h3>
+      <!-- Featured Projects -->
+      <section class="section section-featured">
+        <div class="section-header">
+          <h2 class="section-title">Featured Work</h2>
+        </div>
+
+        <card-grid>
+
+          <link-card href="/mordictionary/">
+            <h3>MorDictionary</h3>
+            <p>
+              A human-centered lexicographical project focused on unusual words,
+              expressive definitions, and resisting sterile dictionary conventions.
+            </p>
+            <tag-list>
+              <tag-pill>400 Language</tag-pill>
+              <tag-pill>Lexicography</tag-pill>
+            </tag-list>
+          </link-card>
+
+          <link-card href="/wandering-wikis/">
+            <h3>Wandering Wikis</h3>
+            <p>
+              Explorations through Wikipedia, Wiktionary, and other knowledge systems,
+              often with commentary and preservationist intent.
+            </p>
+            <tag-list>
+              <tag-pill>900 History</tag-pill>
+              <tag-pill>Exploration</tag-pill>
+            </tag-list>
+          </link-card>
+
+          <link-card href="/dictionary-art/">
+            <h3>Dictionary Art</h3>
+            <p>Visual interpretations of vocabulary entries, pairing imagery with meaning.</p>
+            <tag-list>
+              <tag-pill>700 Arts</tag-pill>
+            </tag-list>
+          </link-card>
+
+          <link-card href="/lexical-soundtrack/">
+            <h3>Lexical Soundtrack</h3>
+            <p>Matching words with music to explore emotional and conceptual resonance.</p>
+            <tag-list>
+              <tag-pill>780 Music</tag-pill>
+            </tag-list>
+          </link-card>
+
+        </card-grid>
+      </section>
+
+      <!-- Philosophy / About -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Orientation</h2>
+        </div>
+        <div class="philosophy-body">
           <p>
-            A human-centered lexicographical project focused on unusual words,
-            expressive definitions, and resisting sterile dictionary conventions.
+            This site is not a finished product. It is a working system.
+            A place where definitions are written, revised, contradicted, and extended.
+            Where projects are allowed to remain incomplete.
           </p>
-          <tag-list>
-            <tag-pill>400 Language</tag-pill>
-            <tag-pill>Lexicography</tag-pill>
-          </tag-list>
-        </link-card>
-
-        <link-card href="/wandering-wikis/">
-          <h3>Wandering Wikis</h3>
           <p>
-            Explorations through Wikipedia, Wiktionary, and other knowledge systems,
-            often with commentary and preservationist intent.
+            The aim is not perfection, but velocity — the acceleration of ideas across
+            formats, mediums, and structures.
           </p>
-          <tag-list>
-            <tag-pill>900 History</tag-pill>
-            <tag-pill>Exploration</tag-pill>
-          </tag-list>
-        </link-card>
+        </div>
+      </section>
 
-        <link-card href="/dictionary-art/">
-          <h3>Dictionary Art</h3>
-          <p>Visual interpretations of vocabulary entries, pairing imagery with meaning.</p>
-          <tag-list>
-            <tag-pill>700 Arts</tag-pill>
-          </tag-list>
-        </link-card>
+      <!-- External / Meta Links -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Elsewhere</h2>
+        </div>
 
-        <link-card href="/lexical-soundtrack/">
-          <h3>Lexical Soundtrack</h3>
-          <p>Matching words with music to explore emotional and conceptual resonance.</p>
-          <tag-list>
-            <tag-pill>780 Music</tag-pill>
-          </tag-list>
-        </link-card>
+        <card-grid>
 
-      </card-grid>
-    </section>
+          <link-card href="https://moribundmurdoch.bearblog.dev/" target="_blank">
+            <h3>Bearblog</h3>
+            <p>Long-form writing, essays, and reflections.</p>
+          </link-card>
 
-    <!-- Philosophy / About -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">Orientation</h2>
-      </div>
-      <div class="philosophy-body">
-        <p>
-          This site is not a finished product. It is a working system.
-          A place where definitions are written, revised, contradicted, and extended.
-          Where projects are allowed to remain incomplete.
-        </p>
-        <p>
-          The aim is not perfection, but velocity — the acceleration of ideas across
-          formats, mediums, and structures.
-        </p>
-      </div>
-    </section>
+          <link-card href="https://mordictionary.blogspot.com/" target="_blank">
+            <h3>Blogspot Archive</h3>
+            <p>Older entries and archival material.</p>
+          </link-card>
 
-    <!-- External / Meta Links -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">Elsewhere</h2>
-      </div>
+          <link-card href="https://mordictionary.neocities.org/" target="_blank">
+            <h3>Neocities</h3>
+            <p>Aesthetic and experimental web presence.</p>
+          </link-card>
 
-      <card-grid>
+          <link-card href="https://github.com/MorDictionary" target="_blank">
+            <h3>GitHub</h3>
+            <p>Open-source work and technical experiments.</p>
+          </link-card>
 
-        <link-card href="https://moribundmurdoch.bearblog.dev/" target="_blank">
-          <h3>Bearblog</h3>
-          <p>Long-form writing, essays, and reflections.</p>
-        </link-card>
+        </card-grid>
+      </section>
 
-        <link-card href="https://mordictionary.blogspot.com/" target="_blank">
-          <h3>Blogspot Archive</h3>
-          <p>Older entries and archival material.</p>
-        </link-card>
+    </main>
 
-        <link-card href="https://mordictionary.neocities.org/" target="_blank">
-          <h3>Neocities</h3>
-          <p>Aesthetic and experimental web presence.</p>
-        </link-card>
+    <mor-footer></mor-footer>
 
-        <link-card href="https://github.com/MorDictionary" target="_blank">
-          <h3>GitHub</h3>
-          <p>Open-source work and technical experiments.</p>
-        </link-card>
+  </div><!-- /#page-wrap -->
 
-      </card-grid>
-    </section>
-
-  </main>
-
-  <mor-footer></mor-footer>
-
-  <!-- Components — filenames must match actual files on disk -->
+  <!-- Components -->
   <script type="module" src="/components/mor-header.js"></script>
   <script type="module" src="/components/mor-footer.js"></script>
   <script type="module" src="/components/mor-ui-cards.js"></script>
+  <script src="/components/nav-sidebar.js"></script>
+
+  <!-- Populate sidebar nav + mark active page -->
+<!-- Populate sidebar nav + mark active page -->
+<script>
+  customElements.whenDefined('nav-sidebar').then(() => {
+    const sidebar = document.getElementById('main-sidebar');
+    sidebar.setData([
+      {
+        section: null,
+        items: [
+          { icon: "🏠", label: "Home", href: "/index.php", active: true },
+        ]
+      },
+      {
+        section: "Explore",
+        collapsible: true,
+        items: [
+          { icon: "📚", label: "Projects",              href: "/projects.php" },
+          { icon: "📖", label: "Wiki",                  href: "/wiki/" },
+          { icon: "🌐", label: "Murdoch Content",       href: "/Murdoverse.php" },
+          { icon: "🔤", label: "Vocabulary Aids",       href: "/Lexicosphere.php" },
+          { icon: "🗂️", label: "Dewey Decimal System",  href: "/Deweyverse.php" },
+        ]
+      },
+      {
+        section: "Featured Work",
+        collapsible: true,
+        items: [
+          { icon: "📕", label: "MorDictionary",      href: "/mordictionary/" },
+          { icon: "🗺️", label: "Wandering Wikis",    href: "/wandering-wikis/" },
+          { icon: "🎨", label: "Dictionary Art",     href: "/dictionary-art/" },
+          { icon: "🎵", label: "Lexical Soundtrack", href: "/lexical-soundtrack/" },
+        ]
+      },
+      {
+        section: "Elsewhere",
+        collapsible: true,
+        items: [
+          { icon: "✍️", label: "Bearblog",        href: "https://moribundmurdoch.bearblog.dev/", target: "_blank" },
+          { icon: "📦", label: "Blogspot Archive", href: "https://mordictionary.blogspot.com/",  target: "_blank" },
+          { icon: "🌸", label: "Neocities",        href: "https://mordictionary.neocities.org/", target: "_blank" },
+          { icon: "💻", label: "GitHub",           href: "https://github.com/MorDictionary",     target: "_blank" },
+        ]
+      }
+    ]);
+
+    // Auto-highlight whichever item matches the current URL
+    const currentPath = window.location.pathname;
+    sidebar.shadowRoot.querySelectorAll('.sb-item').forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === currentPath) {
+        item.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
