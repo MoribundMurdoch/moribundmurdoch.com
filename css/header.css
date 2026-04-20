@@ -1,0 +1,205 @@
+/* ============================================================
+   header.css — MoribundMurdoch header component
+   ============================================================ */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 12, 0.94) 0%,
+      rgba(10, 10, 16, 0.86) 100%
+    );
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+
+  box-shadow:
+    0 1px 0 var(--line),
+    0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  text-shadow: none;
+  outline: none;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 999px;
+
+  border: 1px solid var(--line-strong);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 8px 20px rgba(0,0,0,0.28);
+
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    border-color var(--dur-mid) var(--ease-out),
+    box-shadow var(--dur-mid) var(--ease-out),
+    opacity var(--dur-mid) var(--ease-out);
+}
+
+.brand:hover .brand-logo,
+.brand:focus-visible .brand-logo {
+  transform: translateY(-1px);
+  border-color: var(--accent-dim);
+  box-shadow:
+    0 0 0 1px rgba(184,156,255,0.12),
+    0 0 18px rgba(184,156,255,0.18),
+    0 10px 24px rgba(0,0,0,0.3);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.nav .pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 0.8rem;
+  min-height: 2.3rem;
+
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.025);
+  color: var(--muted-soft);
+
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-decoration: none;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 0 0 rgba(184,156,255,0);
+
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    color var(--dur-mid) var(--ease-out),
+    background var(--dur-mid) var(--ease-out),
+    border-color var(--dur-mid) var(--ease-out),
+    box-shadow var(--dur-mid) var(--ease-out);
+}
+
+.nav .pill:hover,
+.nav .pill:focus-visible {
+  color: var(--text);
+  background: var(--accent-bg2);
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(184,156,255,0.1),
+    0 0 16px rgba(184,156,255,0.12),
+    var(--shadow-sm);
+  outline: none;
+  text-shadow: none;
+}
+
+.nav .pill.active,
+.nav .pill[aria-current="page"] {
+  color: var(--accent-soft);
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px rgba(184,156,255,0.12),
+    0 0 18px rgba(184,156,255,0.14);
+}
+
+.nav .pill.active:hover,
+.nav .pill[aria-current="page"]:hover,
+.nav .pill.active:focus-visible,
+.nav .pill[aria-current="page"]:focus-visible {
+  color: var(--text);
+  background: var(--accent-bg2);
+  border-color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar,
+  header.site-header,
+  header {
+    flex-direction: column;
+    ...
+  }
+
+  .nav,
+  nav {
+    width: 100%;
+  }
+
+  .nav a,
+  nav a {
+    margin-left: 0;
+    margin-right: .5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding: 0.85rem 1rem;
+    gap: 0.9rem;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav {
+    gap: 0.4rem;
+  }
+
+  .nav .pill {
+    font-size: 0.88rem;
+    padding: 0.48rem 0.72rem;
+  }
+}

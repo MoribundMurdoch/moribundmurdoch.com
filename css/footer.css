@@ -1,0 +1,241 @@
+/* ============================================================
+   footer.css — MoribundMurdoch footer component
+   ============================================================ */
+
+.mor-footer {
+  display: block;
+  margin-top: 4rem;
+  color: var(--text);
+}
+
+.mor-footer__inner {
+  width: min(calc(100% - 2rem), 1400px);
+  margin: 0 auto;
+}
+
+.mor-footer {
+  padding: 2.75rem 0 1.35rem;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at top center, rgba(180, 150, 255, 0.06), transparent 34%),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03), transparent 28%),
+    var(--bg-deep);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.mor-footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.mor-footer__columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.25rem;
+  justify-content: center;
+  min-width: 0;
+}
+
+.mor-footer__column {
+  min-width: 180px;
+  max-width: 240px;
+}
+
+.mor-footer__heading {
+  margin: 0 0 1rem;
+  font-size: 1.28rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.mor-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.mor-footer__link {
+  display: block;
+  padding: 0.72rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 0 0 rgba(193, 167, 255, 0);
+  transition:
+    transform var(--dur-fast) ease,
+    background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.mor-footer__link:hover,
+.mor-footer__link:focus-visible {
+  background: var(--accent-bg2);
+  border-color: var(--accent-dim);
+  color: var(--text);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(205, 182, 255, 0.12),
+    0 0 14px rgba(182, 150, 255, 0.16);
+  outline: none;
+  text-shadow: none;
+}
+
+.mor-footer__side {
+  min-width: 240px;
+  max-width: 300px;
+  text-align: right;
+}
+
+.mor-footer__copyright {
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+  color: var(--text);
+}
+
+.mor-footer__meta {
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: var(--text-soft);
+}
+
+.mor-footer__powered {
+  margin-top: 0.8rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--muted-soft);
+}
+
+.mor-footer__utility {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1.7rem;
+}
+
+.mor-footer__back-to-top,
+.mor-footer__audio-button {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) ease,
+    transform var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.mor-footer__audio-button {
+  width: auto;
+  min-width: 4.5rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.mor-footer__back-to-top:hover,
+.mor-footer__back-to-top:focus-visible,
+.mor-footer__audio-button:hover,
+.mor-footer__audio-button:focus-visible {
+  background: var(--accent-bg2);
+  border-color: var(--accent-dim);
+  color: var(--text);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(209, 188, 255, 0.1),
+    0 0 14px rgba(182, 150, 255, 0.14);
+  outline: none;
+}
+
+.mor-footer__divider {
+  margin: 1rem 0 0;
+  border: 0;
+  border-top: 1px solid rgba(220, 220, 255, 0.18);
+  box-shadow: 0 1px 0 rgba(120, 90, 180, 0.08);
+}
+
+.mor-footer__music {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.mor-footer__track {
+  font-size: 1.04rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--text-soft);
+}
+
+a.mor-footer__track {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 1px;
+}
+
+a.mor-footer__track:hover,
+a.mor-footer__track:focus-visible {
+  color: var(--accent-soft);
+  text-shadow: 0 0 10px rgba(186, 149, 255, 0.25);
+  outline: none;
+}
+
+@media (max-width: 980px) {
+  .mor-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .mor-footer__columns {
+    justify-content: flex-start;
+  }
+
+  .mor-footer__side {
+    text-align: left;
+  }
+}
+
+@media (max-width: 720px) {
+  .mor-footer {
+    padding: 2.2rem 0 1.2rem;
+  }
+
+  .mor-footer__columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mor-footer__column,
+  .mor-footer__side {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .mor-footer__music {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
